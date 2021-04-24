@@ -1,0 +1,16 @@
+.body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.git-container{
+    display: flex;
+    margin:  0 1vh;
+}
+
+.git-link{
+    padding: 0 1vh;
+    border-right: .5vh;
+    border-left: .1vh;
+}
