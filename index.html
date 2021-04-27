@@ -10,9 +10,48 @@
 	<body>
 		<!--Header-->
 		<div class="header">
+			<!--Header will be title-->
 			<h1>Header</h1>
+			<!--"p" will be motivational quote from API-->
 			<p>This is the header for the website</p>
 		</div>
+		<section class="hero">
+			<div class="hero-cta">
+				<h2>We Are Here To Help!!!</h2>
+				<p>
+					<!--Make this statement better once it is clear what services we can offer-->
+					Here at "INSERT NAME" we are commited to providing you with the tools available to help you be the best person you can be. Given your goals
+					we will provide you with exercise opptions and local forecasts to help you plan out you workouts.
+				</p>
+			</div>
+			<div class="hero-form">
+				<h3>Get Started Today</h3>
+				<p>
+					Submit your name and we will pick up where you left off last time, or if you are new, DONT WORRY! we provide a free web base to help you get
+					started on your new lifestyle!
+				</p>
+				<form>
+					<label for="name">Enter full name:</label>
+					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
+					<p>
+						Have you visited our site before before?
+						<!-- based upon click generate modal for new user asking for address, age, and what they would like to see (inputs to API) or return data from local storage-->
+						<span class="radio-wrapper">
+							<button type="submit">Yes</button>
+						</span>
+						<span class="radio-wrapper">
+							<button type="submit">No</button>
+						</span>
+					</p>
+					<p>
+						<span class="checkbox-wrapper">
+							<input type="checkbox" name="age-confirm" id="checkbox" />
+							<label for="checkbox">I acknowledge that I am at least 18 years of age.</label>
+						</span>
+					</p>
+				</form>
+			</div>
+		</section>
 
 		<!--Develop-Api-1-->
 		<section class="row" id="Develop-1">
@@ -36,15 +75,19 @@
 			<div class="row" id="Develop-4-row">This will be the section for api-4</div>
 		</section>
 
-		<!-- div container for Github Links-->
-		<div class="git-container">
-			<a class="git-link" href="https://github.com/shanemcf">Shane McFadden</a>
-			<a class="git-link" href="https://github.com/shanemcf">Bryant</a>
-			<a class="git-link" href="https://github.com/shanemcf">Thelma</a>
-
-			<a class="git-link" href="https://github.com/glennaellis94">Glenn Ellis</a>
-		</div>
-		<div>delete this</div>
+		<!-- footer container for Github Links, align copy right stuff to the right, stack and center other divs-->
+		<footer class="footer-container">
+			<div>Copy Right stuff</div>
+			<div class="git-container">
+				<div>Git involved on our other work!</div>
+				<div class="git-links">
+					<a class="git-link" href="https://github.com/shanemcf">Shane McFadden</a>
+					<a class="git-link" href="https://github.com/shanemcf">Bryant</a>
+					<a class="git-link" href="https://github.com/shanemcf">Thelma</a>
+					<a class="git-link" href="https://github.com/glennaellis94">Glenn Ellis</a>
+				</div>
+			</div>
+		</footer>
 		<script src="./assets/script.js"></script>
 	</body>
 </html>
