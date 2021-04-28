@@ -1,3 +1,9 @@
+main {
+    flex: 1 0 auto;
+    padding-left: 2vh;
+    padding-left: 2vh;
+}
+
 .header{
     
     padding: 60px;
