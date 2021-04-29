@@ -55,7 +55,7 @@
   
   /* Modal Content */
   .modal-content {
-    position: relative;
+    position: flex;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
@@ -76,5 +76,13 @@
     color: #024e76;
     width: 50%;
     margin-bottom: 15px;
-    
+
+  }
+
+  .savebutton {
+      border: none;
+      padding: 10px 20px;
+      background-color: antiquewhite;
+      po
+
   }
