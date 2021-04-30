@@ -27,12 +27,16 @@ const postWorkout = async () => {
         password: "workout",
         workout: "workout input"
     }
+    
     const result = await
     fetch('api/workout', {method: 'POST', body: JSON.stringify(payload)});
     const data = result.json();
+    console.log(payload);
     return data
+    
 }
 document.querySelector('#submit').addEventListener('click', () => {postWorkout();
+    // document.querySelector('#submit').addEventListener('click', postWorkout)
 })
 
 //  <script>
