@@ -14,18 +14,17 @@
 		<!--Header-->
 
 		<!-- Hero -->
-		<div class="hero hero-image #e3f2fd blue lighten-5 header" >
-			<div class="container">
-			<!--Header will be title-->
-			<h1><span>Fitginize</span></h1>
-			<!--"p" will be motivational quote from API-->
+		<div class="hero-image"></div>
+		<div class="hero-text">
+			<h1>Fitginize</h1>
 			<p>Plan your future today.</p>
-			</div>
-			
+			<button class="hero-button" onclick="submit">New to Fitginize?</button>
 		</div>
 		<!-- Hero End -->
 
-        <nav>
+    <!-- Navbar commented out
+		
+		<nav>
             <div class="nav-wrapper #9fa8da indigo accent-1">
               <a href="#" class="brand-logo center"></a>
               <ul id="nav-mobile" class="center hide-on-med-and-down">
@@ -34,29 +33,34 @@
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
-          </nav>
+        </nav> 
+	-->
+
 		<section class="hero">
 			<div class=" card-panel #e3f2fd blue lighten-5 hero-cta">
 				
-				<h2>We Are Here To Help!!!</h2>
+				<h3>We're Here For You</h3>
 				<p>
 					<!--Make this statement better once it is clear what services we can offer-->
-					Here at "INSERT NAME" we are commited to providing you with the tools available to help you be the best person you can be. Given your goals
+					Here at Fitginze, we are commited to providing you with the tools available to help you be the best person you can be. Given your goals,
 					we will provide you with exercise opptions and local forecasts to help you plan out you workouts.
 				</p>
 			</div>
-			<div class=" card-panel #e3f2fd blue lighten-5 hero-form">
+			<div class="card-panel #e3f2fd blue lighten-5 hero-form">
 				<h3>Get Started Today</h3>
 				<p>
 					Submit your name and we will pick up where you left off last time, or if you are new, DONT WORRY! we provide a free web base to help you get
 					started on your new lifestyle!
 				</p>
 				<form>
-					<label class="name-input" for="name">Enter full name:</label>
-					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/>
+					<label class="name-input" for="name">Enter full name:</label> 
+					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/><button onclick="submit">Submit</button>
+
+
+					<!-- " Have you visited our site before before? " commented out, replace with modal onclick of button in Hero section
 					<p>
 						Have you visited our site before before?
-						<!-- based upon click generate modal for new user asking for address, age, and what they would like to see (inputs to API) or return data from local storage-->
+						
 						<span>
 							<form action="#">
 								<p>
@@ -70,13 +74,15 @@
 									  <input type="checkbox" class="filled-in"  />
 									  <span>No</span>
 									</label>
+									
 								</p>
+								<input type="submit" value="Submit" onclick=""	>
+								
 							</form>
 						</span>
 					</p>
 
-
-
+				-->
 					
 					<p>
 						<span class="checkbox-wrapper">
@@ -99,8 +105,8 @@
 		
 
 
+<!-- API placeholder blocks commented out, replace with APIs 
 
-		
   		<div class="card-panel section #e3f2fd blue lighten-5">  
 		<h5>API 1</h5>
     	<p>Stuff</p>
@@ -114,7 +120,8 @@
   		<div class="card-panel section #e3f2fd blue lighten-5">
     	<h5>API 3</h5>
     	<p>Stuff</p>
-  		</div>
+		  </div>
+-->
 
 		<!-- footer container for Github Links, align copy right stuff to the right, stack and center other divs-->
 		
@@ -123,9 +130,7 @@
 			  <div class="row">
 				<div class="col l6 s12">
 				  <h5 class="white-text">Git involved on our other work!</h5>
-				  <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut amet, 
-					  harum reiciendis id, dignissimos praesentium magni vero 
-					  dolores sint maxime facilis optio vel sunt iste neque numquam nam deleniti sequi?</p>
+				  <p class="grey-text text-lighten-4">Take a look at our other awesome projects!</p>
 				</div>
 				<div class="col l4 offset-l2 s12">
 				  <h5 class="white-text">Github Links</h5>
@@ -139,10 +144,8 @@
 			  </div>
 			</div>
 			<div class="footer-copyright">
-			  <div class="">
 			  © 2014 Copyright Text
 			  <a class="grey-text text-lighten-4 right" href="index.html">Back to top</a>
-			  </div>
 			</div>
 		  </footer>
 		<script src="./assets/script.js"></script>
