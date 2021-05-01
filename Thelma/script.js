@@ -23,25 +23,3 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
-// Get started button
-let info = [];
-const addName = (ev)=>{
-    ev.preventDefault();
-    let name ={
-        id: Date.now(),
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        location: document.getElementById('location').value,
-    }
-
-    info.push(name);
-    document.forms[0].reset(); //clear the form for the next entry
-
-    console.warn('added' , {info} );
-    
-}
-
-document.addEventListener('domContentLoaded' ,()=>{
-    document.getElementById('save').addEventListener('click' , addName);
-});

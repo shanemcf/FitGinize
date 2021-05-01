@@ -19,23 +19,61 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>
-        <form>
+      <header>
       <h3>Let's get to know you</h3> 
-      <p>Fill out this form to get Started</p>
-      <label for="name">Enter full name:</label>
-      <input type="text" placeholder="Your Name" name="name" id="name" class="form-input">
+      </header>
+      <body>
+        <form>
+            <div class="userinput">
+            <div class="formBox">
+                <label for="Name">Enter Full Name:</label>
+                <input type="text" id="name" placeholder="Title"/>
+            </div>
+            <div class="formBox">
+                <label for="email">Enter email address:</label>
+                <input type="text" id="email" placeholder="Email"/>
+            </div>
+            <div class="formBox">
+                <label for="location">Enter your location:</label>
+                <input type="text" id="city" placeholder="City"/>
+            </div>
+            <div class="formBox">
+                <button id="btn">Save</button>
+            </div>
+            <div id="msg">
+                <pre></pre>
+            </div>
+            </div>
+        </form>
+        <script>
+            let info = [];
+    
+            //example
+    
+            const addInfo = (ev)=>{
+                ev.preventDefault(); // to stop the form submitting
+                let user = {
+                    id: Date.now(),
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    city: document.getElementById('city').value
+                }    
+            info.push(user);
+            document.forms[0].reset(); //to clear the form for the next entries
+    
+            // for display purposes only 
+            console.warn('added' , {info} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(info, '\t', 2);
 
-      <label for="email">Enter email address:</label>
-      <input type="text" placeholder="Email Address" name="email" id="email" class="form-input">
-
-      <label for="location">Enter your location:</label>
-      <input type="text" placeholder="Location" name="location" id="location" class="form-input">
-          
-      <button id="save" class="savebutton">Get Started</button>
-      </form>
+            //saving to local storage
+            localStorage.setItem('UserList', JSON.stringify(info) );
+          }
+            document.addEventListener('DOMContentLoaded', ()=>{
+                document.getElementById('btn').addEventListener('click', addInfo);
+            });
+        </script>
+    <script src="script.js"></script> 
+    </body>
+    </html>
      
-    </p>
-
-    <script src="script.js"></script>
-  </div>
-
