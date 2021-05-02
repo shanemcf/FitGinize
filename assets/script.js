@@ -1,3 +1,8 @@
+var userReps = document.querySelector("#stored-reps");
+var userWeight = document.querySelector("#stored-weight");
+var userSets = document.querySelector("#stored-sets");
+var userExercise = document.querySelector("#stored-exercise");
+
 const postWorkout = async () => {
   const data = {
     username: "test",
@@ -57,22 +62,22 @@ document.querySelector("#submit").addEventListener("click", (event) => {
   data.weight = document.getElementById("weight").value;
   data.sets = document.getElementById("sets").value;
   data.exercise1 = document.getElementById("exerciseList").value;
-  // console.log(document.getElementById("exerciseList").value);
   // storing data to Local
   localStorage.setItem("reps", data.reps);
   localStorage.setItem("weight", data.weight);
   localStorage.setItem("sets", data.sets);
   localStorage.setItem("exercise", data.exercise1);
-      // retrieving stored data
+
+  // retrieving stored data
   // document.getElementById("result").innerHTML = localStorage.getItem("reps");
   var storedReps = localStorage.getItem("reps");
   var storedWeight = localStorage.getItem("weight");
- var storedSets = localStorage.getItem("sets");
- var storedExercise  = localStorage.getItem("exercise");
-  console.log(storedReps);
-  console.log(storedWeight);
-  console.log(storedSets);
-  console.log(storedExercise);
+  var storedSets = localStorage.getItem("sets");
+  var storedExercise = localStorage.getItem("exercise");
+  userReps.textContent = storedReps;
+  userWeight.textContent = storedWeight;
+  userSets.textContent = storedSets;
+  userExercise.textContent = storedExercise;
 });
 
 // possible change for form submission
