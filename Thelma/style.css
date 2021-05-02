@@ -19,6 +19,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    
   }
   
   /* The Close Button */
@@ -27,6 +28,8 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    border: slategrey solid 2px;
+    padding: 1px 10px 1px 10px;
   }
   
   .close:hover,
@@ -37,61 +40,54 @@
   }
 
   /* Modal Header */
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
+.modal-content header {
+    padding: 2px 5px;
+    background-color: #7c7975;
     color: white;
+    width: 100%;
+    text-align: center;
   }
   
   /* Modal Body */
-  .modal-body {padding: 2px 16px;}
-  
-  /* Modal Footer */
-  .modal-footer {
+  .modal-content body {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
   }
   
+ 
+  
   /* Modal Content */
-  .modal-content {
+  .userinput {
     position: flex;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     text-align: center;
   }
 
-  .form-input label {
-    border: 1px solid #024e76;
-    float: right;
-    width: 300px;
-    border: 3px solid #73AD21;
-    padding: 7px 15px;
-    margin-bottom: 15px;
-
-  }
-
- 
-
-  .form-input {
-    border: 1px solid #024e76;
-    display: block;
-    padding: 7px 15px;
+  /* Save button */
+  .save {
+    background-color: darkslategrey;
+    color: gainsboro;
     font-size: 16px;
-    color: #024e76;
-    width: 50%;
-    margin-bottom: 15px;
-
+    border-radius: 12px;
+    border: none;
+    width: 20%;
+    padding: 7px 20px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    position: flex;
+    opacity: 60%;
   }
 
-  .savebutton {
-      border: none;
-      padding: 10px 20px;
-      background-color: antiquewhite;
-      po
+  .save:hover {
+    background-color: gray;
+    color: honeydew;
+    border: none;
+  }
 
+  .formBox {
+    padding: 15px;
   }
