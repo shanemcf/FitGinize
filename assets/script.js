@@ -80,6 +80,15 @@ document.querySelector("#submit").addEventListener("click", (event) => {
   userExercise.textContent = storedExercise;
 });
 
+//Next Steps for Wger Api handling
+// add info for exercise so that user can see instructions on how to do
+//add body part integration so user can choose body part then have it filtered out
+//add days of week into log so that they can take the exercise and put it into 'journal'
+//add A.I. responsiveness where they can choose between size, strength, endurance
+//A.I. would then be able to give estimated workout with weights and reps
+
+
+
 // possible change for form submission
 // function logSubmit(event) {
 //     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
