@@ -56,8 +56,12 @@ document.querySelector("#submit").addEventListener("click", (event) => {
   data.reps = document.getElementById("reps").value;
   data.weight = document.getElementById("weight").value;
   data.sets = document.getElementById("sets").value;
-
+  data.exercise1 = document.getElementById("exerciseList").value;
+  console.log(data.reps);
   console.log(data.weight);
+  console.log(data.sets);
+  // console.log(document.getElementById("exerciseList").value);
+  console.log(data.exercise1);
 });
 
 // possible change for form submission
