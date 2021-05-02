@@ -57,11 +57,22 @@ document.querySelector("#submit").addEventListener("click", (event) => {
   data.weight = document.getElementById("weight").value;
   data.sets = document.getElementById("sets").value;
   data.exercise1 = document.getElementById("exerciseList").value;
-  console.log(data.reps);
-  console.log(data.weight);
-  console.log(data.sets);
   // console.log(document.getElementById("exerciseList").value);
-  console.log(data.exercise1);
+  // storing data to Local
+  localStorage.setItem("reps", data.reps);
+  localStorage.setItem("weight", data.weight);
+  localStorage.setItem("sets", data.sets);
+  localStorage.setItem("exercise", data.exercise1);
+      // retrieving stored data
+  // document.getElementById("result").innerHTML = localStorage.getItem("reps");
+  var storedReps = localStorage.getItem("reps");
+  var storedWeight = localStorage.getItem("weight");
+ var storedSets = localStorage.getItem("sets");
+ var storedExercise  = localStorage.getItem("exercise");
+  console.log(storedReps);
+  console.log(storedWeight);
+  console.log(storedSets);
+  console.log(storedExercise);
 });
 
 // possible change for form submission
