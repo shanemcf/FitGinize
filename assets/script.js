@@ -1,5 +1,3 @@
-
-
 const postWorkout = async () => {
   const data = {
     username: "test",
@@ -16,17 +14,13 @@ const postWorkout = async () => {
   return data1;
 };
 
-const storedWorkoutInfo = () => {
-
-}
+const storedWorkoutInfo = () => {};
 
 document.querySelector("#submit").addEventListener("click", (event) => {
-    event.preventDefault();
-    console.log(event.target)
+  event.preventDefault();
+  console.log(event.target);
   storedWorkoutInfo();
 });
-  
-
 
 async function getEx() {
   let url = "https://wger.de/api/v2/exercise/?format=json";
@@ -44,7 +38,7 @@ async function getEx() {
 }
 
 getEx().then((data) => {
-         //populate drop down with data
+  //populate drop down with data
   var select = document.getElementById("exerciseList");
 
   for (let i = 0; i < data.length; i++) {
@@ -55,55 +49,28 @@ getEx().then((data) => {
     select.appendChild(el);
   }
 });
-  //  getting the data after submission
-  document.querySelector("#submit").addEventListener("click", (event) => {
-    event.preventDefault();
-    data = {}
-    data.reps = document.getElementById("reps").value;
-    data.weight = document.getElementById("weight").value;
-    data.sets = document.getElementById("sets").value;
-    
-    console.log(data.weight);
-  })
+//  getting the data after submission
+document.querySelector("#submit").addEventListener("click", (event) => {
+  event.preventDefault();
+  data = {};
+  data.reps = document.getElementById("reps").value;
+  data.weight = document.getElementById("weight").value;
+  data.sets = document.getElementById("sets").value;
 
-  // possible change for form submission
-  // function logSubmit(event) {
-  //     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-  //     event.preventDefault();
-  //   }
+  console.log(data.weight);
+});
 
-  //   const form = document.getElementById('form');
-  //   const log = document.getElementById('log');
-  //   form.addEventListener('submit', logSubmit);
+// possible change for form submission
+// function logSubmit(event) {
+//     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+//     event.preventDefault();
+//   }
 
+//   const form = document.getElementById('form');
+//   const log = document.getElementById('log');
+//   form.addEventListener('submit', logSubmit);
 
-
-
-//data needed back( in array?)
-// {
-//     "reps": [
-//         "This field is required."
-//     ],
-//     "weight": [
-//         "This field is required."
-//     ],
-//     "date": [
-//         "This field is required."
-//     ],
-//     "exercise": [
-//         "This field is required."
-//     ],
-//     "workout": [
-//         "This field is required."
-//     ]
-// }
-
-/* </script> */
-
-
-
-     
-      //Get Method for workout Log not pulling the right data
+//Get Method for workout Log not pulling the right data
 // var obj = {
 //     method: "GET",
 //     headers: {
@@ -117,8 +84,7 @@ getEx().then((data) => {
 //     .then((res) => res.json())
 //     .then((data) => console.log("data: ", data));
 
-
-    //hard-coded method to look at data for POST
+//hard-coded method to look at data for POST
 // let data = {
 //   reps: [1],
 //   weight: [20],
@@ -126,7 +92,7 @@ getEx().then((data) => {
 //   exercise: ["curl"],
 //   workout: [1],
 // };
-  // POST method having issues at this endpoint
+// POST method having issues at this endpoint
 // let newObj = {
 //   method: "POST",
 //   headers: {
