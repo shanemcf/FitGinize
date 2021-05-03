@@ -1,78 +1,70 @@
 * {
+    box-sizing: border-box;
     font-family: 'Ubuntu Condensed', sans-serif;
 }
 
-.hero-image {
-    background-image: url("/assets/images/image.jpg");
-    background-color: #cccccc;
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+body,html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu Condensed', sans-serif ;
 }
 
+h1 {
+    font-size: 70;
+    text-transform: uppercase;
+    margin: 0;
+}
   
-.container {
+.hero-image {
+    background-image: url(/P1G10/assets/images/image.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    filter: blur(4px);
+}
+
+.hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    width: 45%;
+    padding: 40px 0;
     text-align: center;
-    color: black;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.container h1 {
-    font-size: 200px;
-    letter-spacing: 0.2em;
-    
-}
-
-.container p {
-    font-size: 40px;
-}
-
-.container h1 span {
-    border: 5px solid black;
-    
-}
-
-.hero p {
+    border-top-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #e3f2fd;
     font-weight: bold;
+    border-color: #e3f2fd;
+    border: 5px solid;
 }
 
-.header{
-    
-    padding: 60px;
+.hero-text p {
+    padding: 0 8%;
+    font-size: x-large;
+    font-family:'Ubuntu Condensed', sans-serif;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 50px;
+    border: 2px solid #e3f2fd;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.info {
     text-align: center;
-    font-size: 30px;
 }
-
-.body{
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    padding: 60px;
-    font-size: medium;
-    text-align: center;
-}
-
 
 .name-input {
-    font-size: large;
-    
+    font-size: xx-large;
+
 }
 
-.git-container{
-    display: flex;
-    margin:  0 1vh;
-}
 
-.git-link{
-    padding: 0 1vh;
-    border-right: .5vh;
-    border-left: .1vh;
-}
