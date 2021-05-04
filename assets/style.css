@@ -1,4 +1,6 @@
 * {
+
+
     box-sizing: border-box;
     font-family: 'Ubuntu Condensed', sans-serif;
 }
@@ -24,6 +26,7 @@ h1 {
     background-position: center center;
     height: 100%;
     filter: blur(4px);
+
 }
 
 .hero-text {
@@ -88,8 +91,10 @@ li {
     text-align: center;
 }
 
+
 .name-input {
     font-size: xx-large;
+
 
 }
 
