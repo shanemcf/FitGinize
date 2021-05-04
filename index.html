@@ -1,70 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>P1G10</title>
-</head>
-<body>
-    <!--Navbar-->
-    <div class="navbar_items">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#api-1">Api-1</a></li>
-            <li><a href="#api-2">Api-2</a></li>
-            <li><a href="#api-3">Api-3</a></li>
-            <li><a href="#api-4">Api-4</a></li>
-        </ul>
-    </div>
 
-    <!--Header-->
-<div class="header">
-    <h1>Header</h1>
-    <p>This is the header for the website</p>
-   
-</div>
-
- <!--Develop-Api-1-->
-<section class="row" id="Develop-1">
- <div class="row" id="Develop-1-row">this will be the section for api-1</div>
-</section>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+		<title>P1G10</title>
+        <!-- Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	</head>
+	<body>
+		<!--Header-->
 
 
- <!--Develop-Api-2-->
- <section class="row" id="Develop-2">
-    <div class="row" id="Develop-2-row">this will be the section for api-2</div>
-   </section>
-   
+		<!-- Hero -->
+		<div class="hero-image"></div>
+		<div class="hero-text">
+			<h1>Fitginize</h1>
+			<p>Plan your future today.</p>
+			<button class="hero-button" onclick="submit">New to Fitginize?</button>
+		</div>
+		<!-- Hero End -->
+
+    <!-- Navbar commented out
+		
+		<nav>
+            <div class="nav-wrapper #9fa8da indigo accent-1">
+              <a href="#" class="brand-logo center"></a>
+              <ul id="nav-mobile" class="center hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+        </nav> 
+	-->
+
+		<section class="hero">
+			<div class="card-panel #e3f2fd blue lighten-5 hero-cta">
+				
+				<h3 class="info">We're Here For You</h3>
+				<p class="info">
+					<!--Make this statement better once it is clear what services we can offer-->
+					Here at Fitginze, we are commited to providing you with the tools available to help you be the best person you can be. Given your goals,
+					we will provide you with exercise opptions and local forecasts to help you plan out you workouts.
+				</p>
+			</div>
+			<div class="card-panel #e3f2fd blue lighten-5 hero-form">
+				<h3 class="info">Get Started Today</h3>
+				<p class="info">
+					Submit your name and we will pick up where you left off last time, or if you are new, DONT WORRY! we provide a free web base to help you get
+					started on your new lifestyle!
+				</p>
+				<form>
+					<label class="name-input" for="name">Enter full name:</label> 
+					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/><button onclick="submit">Submit</button>
 
 
- <!--Develop-Api-3-->
+					<!-- " Have you visited our site before before? " commented out, replace with modal onclick of button in Hero section
+					<p>
+						Have you visited our site before before?
+						
+						<span>
+							<form action="#">
+								<p>
+								  <label>
+									<input type="checkbox" class="filled-in" />
+									<span>Yes</span>
+								  </label>
+								</p>
+								<p>
+									<label>
+									  <input type="checkbox" class="filled-in"  />
+									  <span>No</span>
+									</label>
+									
+								</p>
+								<input type="submit" value="Submit" onclick=""	>
+								
+							</form>
+						</span>
+					</p>
 
- <section class="row" id="Develop-3">
-    <div class="row" id="Develop-3-row">this will be the section for api-3</div>
-   </section>
-   
+				-->
+					
+					<p>
+						<span class="checkbox-wrapper">
+							
+							<label for="checkbox">I acknowledge that I am at least 18 years of age.</label>
+							<form action="#">
+								<p>
+								  <label>
+									<input type="checkbox" class="filled-in" />
+									<span></span>
+								  </label>
+								</p>
+							</form>
+						</span>
+					</p>
+				</form>
+			</div>
+		</section>
+
+		
 
 
- <!--Develop-Api-4-->
+<!-- API placeholder blocks commented out, replace with APIs 
+
+  		<div class="card-panel section #e3f2fd blue lighten-5">  
+		<h5>API 1</h5>
+    	<p>Stuff</p>
+  		</div>
+ 		
+  		<div class="card-panel section #e3f2fd blue lighten-5">
+    	<h5>API 2</h5>
+    	<p>Stuff</p>
+  		</div>
+  		
+  		<div class="card-panel section #e3f2fd blue lighten-5">
+    	<h5>API 3</h5>
+    	<p>Stuff</p>
+		  </div>
+-->
 
 
- <section class="row" id="Develop-4">
-    <div class="row" id="Develop-4-row">This will be the section for api-4</div>
-   </section>
-   
-
-   <!-- div container for Github Links-->
-   <div class="git-container">
-       <a class="git-link" href="https://github.com/shanemcf">Shane McFadden</a>
-       <a class="git-link" href="https://github.com/shanemcf">Bryant</a>
-       <a class="git-link" href="https://github.com/shanemcf">Thelma</a>
-       <a class="git-link" href="https://github.com/shanemcf">Glenn</a>
-   </div>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/script.js"></script>
-</body>
+		<!-- footer container for Github Links, align copy right stuff to the right, stack and center other divs-->
+		
+		<footer class=" #9fa8da indigo accent-1 page-footer">
+			<div class="">
+			  <div class="row">
+				<div class="col l6 s12">
+				  <h5 class="white-text">Git involved on our other work!</h5>
+				  <p class="grey-text text-lighten-4">Take a look at our other awesome projects!</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+				  <h5 class="white-text">Github Links</h5>
+				  <ul>
+					<li><a class="grey-text text-lighten-3" href="https://github.com/shanemcf">Shane</a></li>
+					<li><a class="grey-text text-lighten-3" href="https://github.com/bryantuwagbale">Bryant</a></li>
+					<li><a class="grey-text text-lighten-3" href="https://github.com/shanemcf">Thelma</a></li>
+					<li><a class="grey-text text-lighten-3" href="https://github.com/glennaellis94">Glenn</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+			<div class="footer-copyright">
+			  © 2019 Copyright Fitginize
+			  <a class="grey-text text-lighten-4 right" href="index.html">Back to top</a>
+			</div>
+		  </footer>
+		<script src="./assets/script.js"></script>
+        <!-- Materialize JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</body>
 </html>
