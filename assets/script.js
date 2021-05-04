@@ -140,3 +140,5 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 //     res.json();
 //   })
 //   .then((data) => console.log("data: ", data));
+
+//BMR Calculator
