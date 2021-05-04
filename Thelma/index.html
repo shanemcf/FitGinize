@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Trigger/Open The Modal -->
+<button id="myBtn">Get Started</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+      <header>
+      <h3>Let's get to know you</h3> 
+      </header>
+      <body>
+        <form>
+            <div class="userinput">
+            <div class="formBox">
+                <label for="Name">Enter Full Name:</label>
+                <input type="text" id="name" placeholder="Title"/>
+            </div>
+            <div class="formBox">
+                <label for="email">Enter email address:</label>
+                <input type="text" id="email" placeholder="Email"/>
+            </div>
+            <div class="formBox">
+                <label for="location">Enter your location:</label>
+                <input type="text" id="city" placeholder="City"/>
+            </div>
+            <div class="formBox">
+                <button id="btn" class="save">Save</button>
+            </div>
+            <div id="msg">
+                <pre></pre>
+            </div>
+            </div>
+        </form>
+        <script>
+            let info = [];
+    
+            //example
+    
+            const addInfo = (ev)=>{
+                ev.preventDefault(); // to stop the form submitting
+                let user = {
+                    id: Date.now(),
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    city: document.getElementById('city').value
+                }    
+            info.push(user);
+            document.forms[0].reset(); //to clear the form for the next entries
+    
+          
+            //saving to local storage
+            localStorage.setItem('UserList', JSON.stringify(info) );
+          }
+            document.addEventListener('DOMContentLoaded', ()=>{
+                document.getElementById('btn').addEventListener('click', addInfo);
+            });
+        </script>
+    <script src="script.js"></script> 
+    </body>
+    </html>
+     
