@@ -17,7 +17,7 @@ h1 {
 }
   
 .hero-image {
-    background-image: url(/P1G10/assets/images/image.jpg);
+    background-image: url(/assets/images/image.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
@@ -66,5 +66,6 @@ h1 {
     font-size: xx-large;
 
 }
+
 
 
