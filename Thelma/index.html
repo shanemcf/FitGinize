@@ -60,11 +60,7 @@
             info.push(user);
             document.forms[0].reset(); //to clear the form for the next entries
     
-            // for display purposes only 
-            console.warn('added' , {info} );
-            let pre = document.querySelector('#msg pre');
-            pre.textContent = '\n' + JSON.stringify(info, '\t', 2);
-
+          
             //saving to local storage
             localStorage.setItem('UserList', JSON.stringify(info) );
           }
