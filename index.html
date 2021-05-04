@@ -34,7 +34,7 @@
 				<h2>We Are Here To Help!!!</h2>
 				<p>
 					<!--Make this statement better once it is clear what services we can offer-->
-					Here at "INSERT NAME" we are commited to providing you with the tools available to help you be the best person you can be. Given your goals
+					Here at Fitginize we are commited to providing you with the tools available to help you be the best person you can be. Given your goals
 					we will provide you with exercise opptions and local forecasts to help you plan out you workouts.
 				</p>
 			</div>
@@ -75,7 +75,7 @@
 		<div class="hero-text">
 			<h1>Fitginize</h1>
 			<p>Plan your future today.</p>
-			<button class="hero-button" onclick="submit">New to Fitginize?</button>
+			<button class="hero-button modal-trigger" id="myBtn" href="#myModal" >New to Fitginize?</button>
 		</div>
 		<!-- Hero End -->
 
@@ -120,32 +120,6 @@
 
 
 
-					<!-- " Have you visited our site before before? " commented out, replace with modal onclick of button in Hero section
-					<p>
-						Have you visited our site before before?
-						
-						<span>
-							<form action="#">
-								<p>
-									<label>
-										<input type="checkbox" class="filled-in" />
-										<span>Yes</span>
-									</label>
-								</p>
-								<p>
-									<label>
-										<input type="checkbox" class="filled-in" />
-										<span>No</span>
-									</label>
-									
-								</p>
-								<input type="submit" value="Submit" onclick=""	>
-								
-							</form>
-						</span>
-					</p>
-
-
 
 		
   		<div class="card-panel section #e3f2fd blue lighten-5"> 
@@ -184,7 +158,7 @@
   		</div>
 
 
-				-->
+			
 					
 					<p>
 						<span class="checkbox-wrapper">
@@ -242,6 +216,78 @@
 
 			</div>
 		</footer>
+
+
+    <!-- Trigger/Open The Modal -->
+	<!-- <button id="myBtn">Get Started</button> -->
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	
+	  <!-- Modal content -->
+	  <div class="modal-content">
+		<span class="close">&times;</span>
+		  <header>
+		  <h3>Let's get to know you</h3> 
+		  </header>
+		  <body>
+			<form>
+				<div class="userinput">
+					<div class="formBox">
+						<label for="Mname">Enter Name:</label>
+						<input type="text" id="Mname" placeholder="Jane Doe"/>
+					</div>
+				<div class="formBox">
+					<label for="email">Enter email address:</label>
+					<input type="text" id="email" placeholder="Email"/>
+				</div>
+				<div class="formBox">
+					<label for="location">Enter your location:</label>
+					<input type="text" id="city" placeholder="City"/>
+				</div>
+				<div class="formBox">
+					<button id="btn" class="save">Save</button>
+				</div>
+				<div id="msg">
+					<pre></pre>
+				</div>
+				</div>
+			</form>
+			<script>
+				let info = [];
+		
+				//example
+		
+				const addInfo = (ev)=>{
+					ev.preventDefault(); // to stop the form submitting
+					let user = {
+						id: Date.now(),
+						name: document.getElementById('Mname').value,
+						email: document.getElementById('email').value,
+						city: document.getElementById('city').value
+					}    
+				info.push(user);
+				// document.forms[0].reset(); //to clear the form for the next entries
+		
+			  
+				//saving to local storage
+				localStorage.setItem('UserList', JSON.stringify(info) );
+			  }
+				document.addEventListener('DOMContentLoaded', ()=>{
+					document.getElementById('btn').addEventListener('click', addInfo);
+				});
+
+				document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
+			</script>
+
+
+
+
+
 		<script src="./assets/script.js"></script>
 		<!-- Materialize JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
