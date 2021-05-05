@@ -4,80 +4,80 @@ var userSets = document.querySelector("#stored-sets");
 var userExercise = document.querySelector("#stored-exercise");
 
 const postWorkout = async () => {
-  const data = {
-    username: "test",
-    password: "workout",
-    workout: "workout input",
-  };
+	const data = {
+		username: "test",
+		password: "workout",
+		workout: "workout input",
+	};
 
-  const result = await fetch("api/workoutlog", {
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-  const data1 = result.json();
+	const result = await fetch("api/workoutlog", {
+		method: "POST",
+		body: JSON.stringify(data),
+	});
+	const data1 = result.json();
 
-  return data1;
+	return data1;
 };
 
 const storedWorkoutInfo = () => {};
 
 document.querySelector("#submit").addEventListener("click", (event) => {
-  event.preventDefault();
-  console.log(event.target);
-  storedWorkoutInfo();
+	event.preventDefault();
+	console.log(event.target);
+	storedWorkoutInfo();
 });
 
 async function getEx() {
-  let url = "https://wger.de/api/v2/exercise/?format=json";
-  const array = [];
+	let url = "https://wger.de/api/v2/exercise/?format=json";
+	const array = [];
 
-  while (url) {
-    const res = await fetch(url);
-    data = await res.json();
-    for (const item of data.results) {
-      array.push(item.name);
-    }
-    url = data.next;
-  }
-  return array;
+	while (url) {
+		const res = await fetch(url);
+		data = await res.json();
+		for (const item of data.results) {
+			array.push(item.name);
+		}
+		url = data.next;
+	}
+	return array;
 }
 
 getEx().then((data) => {
-  //populate drop down with data
-  var select = document.getElementById("exerciseList");
+	//populate drop down with data
+	var select = document.getElementById("exerciseList");
 
-  for (let i = 0; i < data.length; i++) {
-    var opt = data[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.appendChild(el);
-  }
+	for (let i = 0; i < data.length; i++) {
+		var opt = data[i];
+		var el = document.createElement("option");
+		el.textContent = opt;
+		el.value = opt;
+		select.appendChild(el);
+	}
 });
 //  getting the data after submission
 document.querySelector("#submit").addEventListener("click", (event) => {
-  event.preventDefault();
-  data = {};
-  data.reps = document.getElementById("reps").value;
-  data.weight = document.getElementById("weight").value;
-  data.sets = document.getElementById("sets").value;
-  data.exercise1 = document.getElementById("exerciseList").value;
-  // storing data to Local
-  localStorage.setItem("reps", data.reps);
-  localStorage.setItem("weight", data.weight);
-  localStorage.setItem("sets", data.sets);
-  localStorage.setItem("exercise", data.exercise1);
+	event.preventDefault();
+	data = {};
+	data.reps = document.getElementById("reps").value;
+	data.weight = document.getElementById("weight").value;
+	data.sets = document.getElementById("sets").value;
+	data.exercise1 = document.getElementById("exerciseList").value;
+	// storing data to Local
+	localStorage.setItem("reps", data.reps);
+	localStorage.setItem("weight", data.weight);
+	localStorage.setItem("sets", data.sets);
+	localStorage.setItem("exercise", data.exercise1);
 
-  // retrieving stored data
-  // document.getElementById("result").innerHTML = localStorage.getItem("reps");
-  var storedReps = localStorage.getItem("reps");
-  var storedWeight = localStorage.getItem("weight");
-  var storedSets = localStorage.getItem("sets");
-  var storedExercise = localStorage.getItem("exercise");
-  userReps.textContent = storedReps;
-  userWeight.textContent = storedWeight;
-  userSets.textContent = storedSets;
-  userExercise.textContent = storedExercise;
+	// retrieving stored data
+	// document.getElementById("result").innerHTML = localStorage.getItem("reps");
+	var storedReps = localStorage.getItem("reps");
+	var storedWeight = localStorage.getItem("weight");
+	var storedSets = localStorage.getItem("sets");
+	var storedExercise = localStorage.getItem("exercise");
+	userReps.textContent = storedReps;
+	userWeight.textContent = storedWeight;
+	userSets.textContent = storedSets;
+	userExercise.textContent = storedExercise;
 });
 
 //Next Steps for Wger Api handling
@@ -86,8 +86,6 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 //add days of week into log so that they can take the exercise and put it into 'journal'
 //add A.I. responsiveness where they can choose between size, strength, endurance
 //A.I. would then be able to give estimated workout with weights and reps
-
-
 
 // possible change for form submission
 // function logSubmit(event) {
@@ -143,7 +141,6 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 
 //BMR Calculator
 
-
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -153,20 +150,47 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal 
+// When the user clicks on the button, open the modal
 // btn.onclick = function() {
 //   modal.style.display = "block";
 //   console.log("hi");
 // }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+span.onclick = function () {
+	modal.style.display = "none";
+};
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+window.onclick = function (event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+};
+
+let info = [];
+
+//example
+
+const addInfo = (ev) => {
+	ev.preventDefault(); // to stop the form submitting
+	let user = {
+		id: Date.now(),
+		name: document.getElementById("Mname").value,
+		email: document.getElementById("email").value,
+		city: document.getElementById("city").value,
+	};
+	info.push(user);
+	// document.forms[0].reset(); //to clear the form for the next entries
+
+	//saving to local storage
+	localStorage.setItem("UserList", JSON.stringify(info));
+};
+document.addEventListener("DOMContentLoaded", () => {
+	document.getElementById("btn").addEventListener("click", addInfo);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	var elems = document.querySelectorAll(".modal");
+	var instances = M.Modal.init(elems);
+});
