@@ -23,7 +23,7 @@ h1 {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 50%;
+	height: 75%;
 	width: 100%;
 }
 
@@ -90,4 +90,14 @@ li a {
 
 .name-input {
 	font-size: xx-large;
+}
+.backToTop {
+	margin-left: -100px;
+}
+.weather-card-title {
+	display: flex;
+	flex-direction: row;
+}
+#todaysWeather {
+	margin-left: 25px;
 }
