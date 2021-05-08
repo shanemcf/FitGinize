@@ -65,6 +65,7 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	data.weight = document.getElementById("weight").value;
 	data.sets = document.getElementById("sets").value;
 	data.exercise1 = document.getElementById("exerciseList").value;
+	
 	// storing data to Local
 	localStorage.setItem("reps", data.reps);
 	localStorage.setItem("weight", data.weight);
@@ -77,10 +78,12 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	var storedWeight = localStorage.getItem("weight");
 	var storedSets = localStorage.getItem("sets");
 	var storedExercise = localStorage.getItem("exercise");
+	//var storedate = currentDateObj;
 	userReps.textContent = storedReps;
 	userWeight.textContent = storedWeight;
 	userSets.textContent = storedSets;
 	userExercise.textContent = storedExercise;
+	console.log(currentDateObj);
 });
 
 //Next Steps for Wger Api handling
@@ -253,6 +256,7 @@ const addInfo = (ev) => {
 								$("#temp-1").html("<p>Temp: " + forecastInfo.list[4].main.temp + " °F</p>");
 								$("#wind-1").html("<p>Wind: " + forecastInfo.list[4].wind.speed + " MPH</p>");
 								$("#humid-1").html("<p>Humidity: " + forecastInfo.list[4].main.humidity + "%</p>");
+								console.log(date);
 
 								//day 2
 								var date2 = moment().add(2, "days").format("MM-DD-YYYY");
