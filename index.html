@@ -23,85 +23,26 @@
               <a href="#" class="brand-logo center"></a>
               <ul id="nav-mobile" class="center hide-on-med-and-down">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#AboutUs">About</a></li>
+                <li><a href="#contactUs">Contact</a></li>
               </ul>
             </div>
-          </nav>
-		<section class="hero">
-			<div class=" card-panel #e3f2fd blue lighten-5 hero-cta">
-				
-				<h2>We Are Here To Help!!!</h2>
-				<p>
-					<!--Make this statement better once it is clear what services we can offer-->
-					Here at Fitginize we are commited to providing you with the tools available to help you be the best person you can be. Given your goals
-					we will provide you with exercise opptions and local forecasts to help you plan out you workouts.
-				</p>
+        </nav>
+
+		<div class="hero-image">
+			<div class="hero-text">
+				<h1>Fitginize</h1>
+				<p>Plan your future today.</p>
+				<button class="hero-button modal-trigger" id="myBtn" href="#myModal" >New to Fitginize?</button>
 			</div>
-			<div class=" card-panel #e3f2fd blue lighten-5 hero-form">
-				<h3>Get Started Today</h3>
-				<p>
-					Submit your name and we will pick up where you left off last time, or if you are new, DONT WORRY! we provide a free web base to help you get
-					started on your new lifestyle!
-				</p>
-				<form>
-					<label class="name-input" for="name">Enter full name:</label>
-					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/>
-					<p>
-						Have you visited our site before before?
-						<!-- based upon click generate modal for new user asking for address, age, and what they would like to see (inputs to API) or return data from local storage-->
-						<span>
-							<form action="#">
-								<p>
-								  <label>
-									<input type="checkbox" class="filled-in" />
-									<span>Yes</span>
-								  </label>
-								</p>
-								<p>
-									<label>
-									  <input type="checkbox" class="filled-in"  />
-									  <span>No</span>
-									</label>
-								</p>
-							</form>
-						</span>
-					</p>
-
-
-
-		<!-- Hero -->
-		<div class="hero-image"></div>
-		<div class="hero-text">
-			<h1>Fitginize</h1>
-			<p>Plan your future today.</p>
-			<button class="hero-button modal-trigger" id="myBtn" href="#myModal" >New to Fitginize?</button>
 		</div>
 		<!-- Hero End -->
 
 
-    <!-- Navbar commented out
-		
-		<nav>
-            <div class="nav-wrapper #9fa8da indigo accent-1">
-              <a href="#" class="brand-logo center"></a>
-              <ul id="nav-mobile" class="center hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-        </nav> 
-	-->
-
-
-
-		
-
 		<section class="hero">
 			<div class="card-panel #e3f2fd blue lighten-5 hero-cta">
 				
-				<h3 class="info">We're Here For You</h3>
+				<h3 class="info" id="AboutUs">We're Here For You</h3>
 				<p class="info">
 					<!--Make this statement better once it is clear what services we can offer-->
 					Here at Fitginze, we are commited to providing you with the tools available to help you be the best person you can be. Given your goals,
@@ -109,87 +50,100 @@
 				</p>
 			</div>
 			<div class="card-panel #e3f2fd blue lighten-5 hero-form">
-				<h3 class="info">Get Started Today</h3>
-				<p class="info">
-					Submit your name and we will pick up where you left off last time, or if you are new, DONT WORRY! we provide a free web base to help you get
-					started on your new lifestyle!
-				</p>
-				<form>
-					<label class="name-input" for="name">Enter full name:</label> 
-					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/><button onclick="submit">Submit</button>
 
+					<!-- <label class="name-input" for="name">Enter full name:</label> 
+					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/><button onclick="submit">Submit</button> -->
 
-
-
-		
-  		<div class="card-panel section #e3f2fd blue lighten-5"> 
-		<h5>API 1</h5>
-    	<p>Stuff</p>
-  		</div>
- 		
-  		<div class="card-panel section #e3f2fd blue lighten-5">
-			<h5>Workout Log</h5>
-			<p>Log in your exercises to save them for future workouts </p>
-			<form action="">
-				<label for="reps">reps: </label>
-				<input type="text" id="reps" name="reps"><br>
-				<label for="weight">weight(Lbs): </label>
-				<input type="text" id="weight" name="weight"><br>
-				<label for="sets">sets: </label>
-				<input type="text" id="sets" name="sets"><br>
-				<label for="exerciseList">Select an Excercise</label>
-				<select style="display: block;" id="exerciseList" name="exerciseList">
-					<option value="">Select an Excercise</option>
-				</select>
-				<input type="submit" id="submit" value="Submit">
-			  </form>
-			  <div class="modal-workoutlog-content"></div>
-			  <div class="card-panel section #e3f2fd blue lighten-5">
-				  <p><strong>Reps:</strong> <span id="stored-reps"></span></p>
-				  <p><strong>Weight:</strong> <span id="stored-weight"></span></p>
-				  <p><strong>Sets:</strong> <span id="stored-sets"></span></p>
-				  <p><strong>Exercise:</strong> <span id="stored-exercise"></span></p>
-			  </div>
-  		</div>
-  		
-  		<div class="card-panel section #e3f2fd blue lighten-5">
-    	<h5>API 3</h5>
-    	<p>Stuff</p>
-  		</div>
-
+  				<div class="card-panel section #e3f2fd blue lighten-5"> 
+					<main class="flex-row justify-space-between">
 
 			
-					
-					<p>
-						<span class="checkbox-wrapper">
-							<label for="checkbox">I acknowledge that I am at least 18 years of age.</label>
-							<form action="#">
-								<p>
-									<label>
-										<input type="checkbox" class="filled-in" />
-										<span></span>
-									</label>
-								</p>
-							</form>
-						</span>
-					</p>
-				</form>
+						<div class="col s2">
+							<div id="todaysWeather" class="col s2">
+								<div class="weather-card-title">
+									<h1 id="cityofinterest"></h1>
+									<img id="current-icon" src="" alt="" />
+								</div>
+								<h1 id="current-temp"></h1>
+								<h1 id="current-wind"></h1>
+								<h1 id="current-humid"></h1>
+								<h1 id="current-uv"></h1>
+							</div>
+			
+							<div class="col-12 card-container">
+								<h4 id="fiveday" class="five-day-forecast"></h4>
+								<div class="flex-row col-12">
+									<div id="hiddencard1" class="none">
+										<h4 class="card-header-1" id="date1"></h4>
+										<p class="card-body" id="temp-1"></p>
+										<p class="card-body" id="wind-1"></p>
+										<p class="card-body" id="humid-1"></p>
+										<img id="icon-1" src="" alt="" />
+									</div>
+									<div id="hiddencard2" class="none">
+										<h4 class="card-header-2" id="date2"></h4>
+										<p class="card-body" id="temp-2"></p>
+										<p class="card-body" id="wind-2"></p>
+										<p class="card-body" id="humid-2"></p>
+										<img id="icon-2" src="" alt="" />
+									</div>
+									<!-- <div id="hiddencard3" class="none">
+										<h4 class="card-header-3" id="date3"></h4>
+										<p class="card-body" id="temp-3"></p>
+										<p class="card-body" id="wind-3"></p>
+										<p class="card-body" id="humid-3"></p>
+										<img id="icon-3" src="" alt="" />
+									</div>
+									<div id="hiddencard4" class="none">
+										<h4 class="card-header-4" id="date4"></h4>
+										<p class="card-body" id="temp-4"></p>
+										<p class="card-body" id="wind-4"></p>
+										<p class="card-body" id="humid-4"></p>
+										<img id="icon-4" src="" alt="" />
+									</div>
+									<div id="hiddencard5" class="none">
+										<h4 class="card-header-5" id="date5"></h4>
+										<p class="card-body" id="temp-5"></p>
+										<p class="card-body" id="wind-5"></p>
+										<p class="card-body" id="humid-5"></p>
+										<img id="icon-5" src="" alt="" />
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</main>
+ 		
+				<div class="card-panel section #e3f2fd blue lighten-5">
+					<h5>Workout Log</h5>
+					<p>Log in your exercises to save them for future workouts </p>
+					<form action="">
+						<label for="reps">reps: </label>
+						<input type="text" id="reps" name="reps"><br>
+						<label for="weight">weight(Lbs): </label>
+						<input type="text" id="weight" name="weight"><br>
+						<label for="sets">sets: </label>
+						<input type="text" id="sets" name="sets"><br>
+						<label for="exerciseList">Select an Excercise</label>
+						<select style="display: block;" id="exerciseList" name="exerciseList">
+							<option value="">Select an Excercise</option>
+						</select>
+						<input type="submit" id="submit" value="Submit">
+					</form>
+						<div class="modal-workoutlog-content"></div>
+						<div class="card-panel section #e3f2fd blue lighten-5">
+							<p><strong>Reps:</strong> <span id="stored-reps"></span></p>
+							<p><strong>Weight:</strong> <span id="stored-weight"></span></p>
+							<p><strong>Sets:</strong> <span id="stored-sets"></span></p>
+							<p><strong>Exercise:</strong> <span id="stored-exercise"></span></p>
+						</div>
+				</div>
 			</div>
 		</section>
 
-		<div class="card-panel section #e3f2fd blue lighten-5">
-			<h5>API 1</h5>
-			<p>Stuff</p>
-		</div>
-
-
-
-
-
 		<!-- footer container for Github Links, align copy right stuff to the right, stack and center other divs-->
 
-		<footer class="#9fa8da indigo accent-1 page-footer">
-			<div class="">
+		<footer class="#9fa8da indigo accent-1 page-footer" id="contactUs">
+			<!-- <div class=""> -->
 			  <div class="row">
 				<div class="col l6 s12">
 				  <h5 class="white-text">Git involved on our other work!</h5>
@@ -200,7 +154,7 @@
 				</div>
 				<div class="col l4 offset-l2 s12">
 				  <h5 class="white-text">Github Links</h5>
-				  <ul>
+				  <ul class="">
 					<li><a class="grey-text text-lighten-3" href="https://github.com/shanemcf">Shane</a></li>
 					<li><a class="grey-text text-lighten-3" href="https://github.com/bryantuwagbale">Bryant</a></li>
 					<li><a class="grey-text text-lighten-3" href="https://github.com/shanemcf">Thelma</a></li>
@@ -211,7 +165,7 @@
 			<div class="footer-copyright">
 
 
-			  © 2019 Copyright Fitginize
+			  © 2021 Copyright Fitginize
 			  <a class="grey-text text-lighten-4 right" href="index.html">Back to top</a>
 
 			</div>
@@ -243,7 +197,7 @@
 				</div>
 				<div class="formBox">
 					<label for="location">Enter your location:</label>
-					<input type="text" id="city" placeholder="City"/>
+					<input type="text" id="location" placeholder="City"/>
 				</div>
 				<div class="formBox">
 					<button id="btn" class="save">Save</button>
@@ -253,43 +207,12 @@
 				</div>
 				</div>
 			</form>
-			<script>
-				let info = [];
-		
-				//example
-		
-				const addInfo = (ev)=>{
-					ev.preventDefault(); // to stop the form submitting
-					let user = {
-						id: Date.now(),
-						name: document.getElementById('Mname').value,
-						email: document.getElementById('email').value,
-						city: document.getElementById('city').value
-					}    
-				info.push(user);
-				// document.forms[0].reset(); //to clear the form for the next entries
-		
-			  
-				//saving to local storage
-				localStorage.setItem('UserList', JSON.stringify(info) );
-			  }
-				document.addEventListener('DOMContentLoaded', ()=>{
-					document.getElementById('btn').addEventListener('click', addInfo);
-				});
 
-				document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-  });
-
-			</script>
-
-
-
-
-
-		<script src="./assets/script.js"></script>
 		<!-- Materialize JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="./assets/script.js"></script>
+	
 	</body>
 </html>
