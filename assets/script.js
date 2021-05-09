@@ -85,6 +85,7 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	userSets.textContent = storedSets;
 	userExercise.textContent = storedExercise;
 	logDate.textContent = currentDateObj;
+	console.log(currentDateObj);
 });
 
 //Next Steps for Wger Api handling
