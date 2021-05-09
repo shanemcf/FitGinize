@@ -2,6 +2,7 @@ var userReps = document.querySelector("#stored-reps");
 var userWeight = document.querySelector("#stored-weight");
 var userSets = document.querySelector("#stored-sets");
 var userExercise = document.querySelector("#stored-exercise");
+var logDate = document.querySelector("#stored-date0");
 var currentDateObj = moment().format("(MM/DD/YYYY)");
 var locations = {};
 var APIKEY = "c40640150c1127abc9a3c2b1334f2b13";
@@ -83,7 +84,7 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	userWeight.textContent = storedWeight;
 	userSets.textContent = storedSets;
 	userExercise.textContent = storedExercise;
-	console.log(currentDateObj);
+	logDate.textContent = currentDateObj;
 });
 
 //Next Steps for Wger Api handling
