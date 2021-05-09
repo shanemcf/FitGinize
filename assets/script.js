@@ -256,7 +256,7 @@ const addInfo = (ev) => {
 								$("#temp-1").html("<p>Temp: " + forecastInfo.list[4].main.temp + " °F</p>");
 								$("#wind-1").html("<p>Wind: " + forecastInfo.list[4].wind.speed + " MPH</p>");
 								$("#humid-1").html("<p>Humidity: " + forecastInfo.list[4].main.humidity + "%</p>");
-								console.log(date);
+								
 
 								//day 2
 								var date2 = moment().add(2, "days").format("MM-DD-YYYY");
