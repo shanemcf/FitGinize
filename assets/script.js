@@ -86,6 +86,15 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	userExercise.textContent = storedExercise;
 	logDate.textContent = currentDateObj;
 	console.log(currentDateObj);
+    // starting function to refactor log so it can take multiple exercises
+// 	function getAllItems()  
+// {    
+//     for (i = 0; i <= localStorage.length-1; i++)    
+//     {     
+//         key = sessionStorage.key(i);    
+//         val = sessionStorage.getItem(key);     
+//     }   
+// }  
 });
 
 //Next Steps for Wger Api handling
