@@ -23,6 +23,20 @@ Additionaly, Fitginize enables you to have an idea of the weather in the next 3 
 ##### Getting the name saved into the local storage because of an ID issue in the index. html file
 ##### Getting the modal to display properly after the merge
 
+## Direction for future development 
+Adding dates to workouts
+
+Providing recomendations based on the weather data
+
+Integrating Fitginize to a full fitness application
+
+Use of A.I. to generate workout plans and nutrition plans 
+
+Adding BMI and weight tracker 
+
+Integrationg Fitginize to a smart watch 
+
+
 ## Credits 
 #### Shane McFadden 
 #### Bryant Uwagbale
