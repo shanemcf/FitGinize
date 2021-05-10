@@ -213,13 +213,15 @@ const addInfo = (ev) => {
 					$("#current-humid").html("<p>Humidity: " + apiInfo.main.humidity + "%</p>");
 
 					if (apiInfo.main.temp >= 80) {
-						$("#currentWeatherReccomendation").html("<p>It's looking pretty hot out, make sure to stay hydrated.</p>");
+						$("#currentWeatherReccomendation").html(
+							"<p>It's looking pretty hot out, make sure to stay hydrated and exercise indoors if possible.</p>"
+						);
 					}
 					if (apiInfo.main.temp < 80 && apiInfo.main.temp >= 65) {
-						$("#currentWeatherReccomendation").html("<p>Temperatures looking good for an outdoor workout.</p>");
+						$("#currentWeatherReccomendation").html("<p>Temperatures are looking good for an outdoor exercise.</p>");
 					}
 					if (apiInfo.main.temp < 65) {
-						$("#currentWeatherReccomendation").html("<p>It's looking pretty cold out, Plan to dress warm!</p>");
+						$("#currentWeatherReccomendation").html("<p>It's looking pretty cold out, Plan to dress warm and exercise indoors if possible.</p>");
 					}
 
 					var apiForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + user.city + "&units=imperial&appid=" + APIKEY;
@@ -243,13 +245,15 @@ const addInfo = (ev) => {
 								$("#wind-1").html("<p>Wind: " + forecastInfo.list[4].wind.speed + " MPH</p>");
 								$("#humid-1").html("<p>Humidity: " + forecastInfo.list[4].main.humidity + "%</p>");
 								if (forecastInfo.list[4].main.temp >= 80) {
-									$("#weatherReccomendation1").html("<p>It's looking pretty hot out, make sure to stay Hydrated.</p>");
+									$("#weatherReccomendation1").html(
+										"<p>It's looking pretty hot out, make sure to stay hydrated and exercise indoors if possible.</p>"
+									);
 								}
 								if (forecastInfo.list[4].main.temp < 80 && forecastInfo.list[4].main.temp >= 65) {
-									$("#weatherReccomendation1").html("<p>Temperatures looking good for an outdoor workout.</p>");
+									$("#weatherReccomendation1").html("<p>Temperatures are looking good for an outdoor exercise.</p>");
 								}
 								if (forecastInfo.list[4].main.temp < 65) {
-									$("#weatherReccomendation1").html("<p>It's looking pretty cold out, Plan to dress warm!</p>");
+									$("#weatherReccomendation1").html("<p>It's looking pretty cold out, Plan to dress warm and exercise indoors if possible.</p>");
 								}
 
 								//day 2
@@ -263,13 +267,15 @@ const addInfo = (ev) => {
 								$("#wind-2").html("<p>Wind: " + forecastInfo.list[12].wind.speed + " MPH</p>");
 								$("#humid-2").html("<p>Humidity: " + forecastInfo.list[12].main.humidity + "%</p>");
 								if (forecastInfo.list[12].main.temp >= 80) {
-									$("#weatherReccomendation2").html("<p>It's looking pretty hot out, make sure to stay Hydrated.</p>");
+									$("#weatherReccomendation2").html(
+										"<p>It's looking pretty hot out, make sure to stay hydrated and exercise indoors if possible.</p>"
+									);
 								}
 								if (forecastInfo.list[12].main.temp < 80 && forecastInfo.list[12].main.temp >= 65) {
-									$("#weatherReccomendation2").html("<p>Temperatures looking good for an outdoor workout.</p>");
+									$("#weatherReccomendation2").html("<p>Temperatures are looking good for an outdoor exercise.</p>");
 								}
 								if (forecastInfo.list[12].main.temp < 65) {
-									$("#weatherReccomendation2").html("<p>It's looking pretty cold out, Plan to dress warm!</p>");
+									$("#weatherReccomendation2").html("<p>It's looking pretty cold out, Plan to dress warm and exercise indoors if possible.</p>");
 								}
 
 								$("#hiddencard1").removeClass();
