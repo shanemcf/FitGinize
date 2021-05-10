@@ -234,7 +234,6 @@ const addInfo = (ev) => {
 								forecastInfo = data;
 
 								//day 1
-								//captures icon code
 
 								var icon = forecastInfo.list[4].weather[0].icon;
 								var date1 = moment().add(1, "days").format("MM-DD-YYYY");
