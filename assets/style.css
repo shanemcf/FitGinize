@@ -70,7 +70,7 @@ li a {
 	padding: 14px 16px;
 }
 p {
-	font-size: 18px;
+	font-size: 24px;
 }
 .hero-text p {
 	padding: 0 8%;
@@ -97,8 +97,11 @@ p {
 	margin-left: -100px;
 }
 label {
-	font-size: 18px;
+	font-size: 24px;
 }
 .cardcss {
 	width: 100%;
+}
+h5 {
+	font-size: 24px;
 }
