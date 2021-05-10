@@ -69,7 +69,9 @@ li a {
 	text-align: center;
 	padding: 14px 16px;
 }
-
+p {
+	font-size: 18px;
+}
 .hero-text p {
 	padding: 0 8%;
 	font-size: x-large;
@@ -94,10 +96,9 @@ li a {
 .backToTop {
 	margin-left: -100px;
 }
-.weather-card-title {
-	display: flex;
-	flex-direction: row;
+label {
+	font-size: 18px;
 }
-#todaysWeather {
-	margin-left: 25px;
+.cardcss {
+	width: 100%;
 }
