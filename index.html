@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet" />
-		<title>P1G10</title>
+		<title>FitGinize</title>
 		<!-- Materialize CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 		<link rel="stylesheet" href="./assets/style.css" />
@@ -30,6 +30,7 @@
         </nav>
 
 		<div class="hero-image">
+			
 			<div class="hero-text">
 				<h1>Fitginize</h1>
 				<p>Plan your future today.</p>
@@ -45,40 +46,37 @@
 				<h3 class="info" id="AboutUs">We're Here For You</h3>
 				<p class="info">
 					<!--Make this statement better once it is clear what services we can offer-->
-					Here at Fitginze, we are commited to providing you with the tools available to help you be the best person you can be. Given your goals,
-					we will provide you with exercise opptions and local forecasts to help you plan out you workouts.
+					Here at Fitginze, we are commited to providing you with the tools to help you be the best person you can be.
+					We understand starting your fitness journey could be intimidating, so we are here to give you an extensive list of workouts to choose from and a way to record your progress.
+					If you give us your location we can reccomend appropriate appearl for the weather.
 				</p>
 			</div>
 			<div class="card-panel #e3f2fd blue lighten-5 hero-form">
 
-					<!-- <label class="name-input" for="name">Enter full name:</label> 
-					<input type="text" placeholder="Your Name" name="name" id="name" class="form-input card-"/><button onclick="submit">Submit</button> -->
 
   				<div class="card-panel section #e3f2fd blue lighten-5"> 
-					<main class="flex-row justify-space-between">
+					<!-- <main class="flex-row justify-space-between"> -->
 
 			
-						<div class="col s2">
-							<div id="todaysWeather" class="col s2">
-								<div class="weather-card-title">
-									<h1 id="cityofinterest"></h1>
-									<img id="current-icon" src="" alt="" />
-								</div>
-								<h1 id="current-temp"></h1>
-								<h1 id="current-wind"></h1>
-								<h1 id="current-humid"></h1>
-								<h1 id="current-uv"></h1>
-							</div>
-			
-							<div class="col-12 card-container">
-								<h4 id="fiveday" class="five-day-forecast"></h4>
-								<div class="flex-row col-12">
+								<div class="row ">
+									<h3 id=currentLocation></h3>
+									<div id="todaysWeather" class="none">
+										<h4 class="weather-card-title" id="cityofinterest"></h4>
+										<p class="card-body" id="current-temp"></p>
+										<p class="card-body" id="current-wind"></p>
+										<p class="card-body" id="current-humid"></p>
+										<img id="current-icon" src="" alt="" />
+										<p class="card-body" id="currentWeatherReccomendation"></p>
+
+									</div>
+									
 									<div id="hiddencard1" class="none">
 										<h4 class="card-header-1" id="date1"></h4>
 										<p class="card-body" id="temp-1"></p>
 										<p class="card-body" id="wind-1"></p>
 										<p class="card-body" id="humid-1"></p>
 										<img id="icon-1" src="" alt="" />
+										<p class="card-body" id="weatherReccomendation1"></p>
 									</div>
 									<div id="hiddencard2" class="none">
 										<h4 class="card-header-2" id="date2"></h4>
@@ -86,58 +84,39 @@
 										<p class="card-body" id="wind-2"></p>
 										<p class="card-body" id="humid-2"></p>
 										<img id="icon-2" src="" alt="" />
+										<p class="card-body" id="weatherReccomendation2"></p>
 									</div>
-									<!-- <div id="hiddencard3" class="none">
-										<h4 class="card-header-3" id="date3"></h4>
-										<p class="card-body" id="temp-3"></p>
-										<p class="card-body" id="wind-3"></p>
-										<p class="card-body" id="humid-3"></p>
-										<img id="icon-3" src="" alt="" />
-									</div>
-									<div id="hiddencard4" class="none">
-										<h4 class="card-header-4" id="date4"></h4>
-										<p class="card-body" id="temp-4"></p>
-										<p class="card-body" id="wind-4"></p>
-										<p class="card-body" id="humid-4"></p>
-										<img id="icon-4" src="" alt="" />
-									</div>
-									<div id="hiddencard5" class="none">
-										<h4 class="card-header-5" id="date5"></h4>
-										<p class="card-body" id="temp-5"></p>
-										<p class="card-body" id="wind-5"></p>
-										<p class="card-body" id="humid-5"></p>
-										<img id="icon-5" src="" alt="" />
-									</div> -->
+
 								</div>
-							</div>
-						</div>
-					</main>
+							<!-- </div> -->
+						<!-- </div> -->
+					<!-- </main> -->
  		
-				<div class="card-panel section #e3f2fd blue lighten-5">
-					<h5>Workout Log</h5>
-					<p>Log in your exercises to save them for future workouts </p>
-					<form action="">
-						<label for="reps">reps: </label>
-						<input type="number" id="reps" name="reps"><br>
-						<label for="weight">weight(Lbs): </label>
-						<input type="number" id="weight" name="weight"><br>
-						<label for="sets">sets: </label>
-						<input type="number" id="sets" name="sets"><br>
-						<label for="exerciseList">Select an Excercise</label>
-						<select style="display: block;" id="exerciseList" name="exerciseList">
-							<option value="">Select an Excercise</option>
-						</select>
-						<input type="submit" id="submit" value="Submit">
-					</form>
-						<div class="modal-workoutlog-content"></div>
-						<div class="card-panel section #e3f2fd blue lighten-5">
-							<p><strong>Date:</strong> <span id="stored-date0"></span></p>
-							<p><strong>Reps:</strong> <span id="stored-reps"></span></p>
-							<p><strong>Weight:</strong> <span id="stored-weight"></span></p>
-							<p><strong>Sets:</strong> <span id="stored-sets"></span></p>
-							<p><strong>Exercise:</strong> <span id="stored-exercise"></span></p>
-						</div>
-				</div>
+					<div class="card-panel section #e3f2fd blue lighten-5">
+						<h5>Workout Log</h5>
+						<p>Log in your exercises to save them for future workouts </p>
+						<form action="">
+							<label for="reps">reps: </label>
+							<input type="number" id="reps" name="reps"><br>
+							<label for="weight">weight(Lbs): </label>
+							<input type="number" id="weight" name="weight"><br>
+							<label for="sets">sets: </label>
+							<input type="number" id="sets" name="sets"><br>
+							<label for="exerciseList">Select an Excercise</label>
+							<select style="display: block;" id="exerciseList" name="exerciseList">
+								<option value="">Select an Excercise</option>
+							</select>
+							<input type="submit" id="submit" value="Submit">
+						</form>
+							<div class="modal-workoutlog-content"></div>
+							<div class="card-panel section #e3f2fd blue lighten-5">
+								<p><strong>Date:</strong> <span id="stored-date0"></span></p>
+								<p><strong>Reps:</strong> <span id="stored-reps"></span></p>
+								<p><strong>Weight:</strong> <span id="stored-weight"></span></p>
+								<p><strong>Sets:</strong> <span id="stored-sets"></span></p>
+								<p><strong>Exercise:</strong> <span id="stored-exercise"></span></p>
+							</div>
+					</div>
 			</div>
 		</section>
 
@@ -201,7 +180,7 @@
 					<input type="text" id="location" placeholder="City"/>
 				</div>
 				<div class="formBox">
-					<button id="btn" class="save">Save</button>
+					<button id="btn" class="save modal-close">Save</button>
 				</div>
 				<div id="msg">
 					<pre></pre>

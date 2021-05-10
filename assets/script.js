@@ -3,7 +3,7 @@ var userWeight = document.querySelector("#stored-weight");
 var userSets = document.querySelector("#stored-sets");
 var userExercise = document.querySelector("#stored-exercise");
 var logDate = document.querySelector("#stored-date0");
-var currentDateObj = moment().format("(MM/DD/YYYY)");
+var currentDateObj = moment().add(0, "days").format("MM-DD-YYYY");
 var locations = {};
 var APIKEY = "c40640150c1127abc9a3c2b1334f2b13";
 
@@ -66,7 +66,7 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	data.weight = document.getElementById("weight").value;
 	data.sets = document.getElementById("sets").value;
 	data.exercise1 = document.getElementById("exerciseList").value;
-	
+
 	// storing data to Local
 	localStorage.setItem("reps", data.reps);
 	localStorage.setItem("weight", data.weight);
@@ -86,15 +86,15 @@ document.querySelector("#submit").addEventListener("click", (event) => {
 	userExercise.textContent = storedExercise;
 	logDate.textContent = currentDateObj;
 	console.log(currentDateObj);
-    // starting function to refactor log so it can take multiple exercises
-// 	function getAllItems()  
-// {    
-//     for (i = 0; i <= localStorage.length-1; i++)    
-//     {     
-//         key = sessionStorage.key(i);    
-//         val = sessionStorage.getItem(key);     
-//     }   
-// }  
+	// starting function to refactor log so it can take multiple exercises
+	// 	function getAllItems()
+	// {
+	//     for (i = 0; i <= localStorage.length-1; i++)
+	//     {
+	//         key = sessionStorage.key(i);
+	//         val = sessionStorage.getItem(key);
+	//     }
+	// }
 });
 
 //Next Steps for Wger Api handling
@@ -165,25 +165,7 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-//   console.log("hi");
-// }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-	modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
-	}
-};
+var spanclose = document.getElementsByClassName("save")[0];
 
 let info = [];
 
@@ -215,7 +197,8 @@ const addInfo = (ev) => {
 
 					//captures icon code
 					var icon = apiInfo.weather[0].icon;
-					$("#cityofinterest").html("<h3>" + user.city + "  " + currentDateObj + "</h3>");
+					$("#currentLocation").html("<h2 class='center'>Weather forecast for " + user.city + "</h2>");
+					$("#cityofinterest").html("<h3>" + currentDateObj + "</h3>");
 					$("#current-icon").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
 					//displayRepos(data, user);
 
@@ -229,24 +212,18 @@ const addInfo = (ev) => {
 					$("#current-wind").html("<p>Wind: " + apiInfo.wind.speed + " MPH</p>");
 					$("#current-humid").html("<p>Humidity: " + apiInfo.main.humidity + "%</p>");
 
-					//fetch request for UV info
-					var uvData = fetch(uvURL).then(function (response) {
-						response.json().then(function (Uvdata) {
-							uvData = Uvdata;
-							var uv = uvData.current.uvi;
+					if (apiInfo.main.temp >= 80) {
+						$("#currentWeatherReccomendation").html(
+							"<p>It's looking pretty hot out, make sure to stay hydrated and exercise indoors if possible.</p>"
+						);
+					}
+					if (apiInfo.main.temp < 80 && apiInfo.main.temp >= 65) {
+						$("#currentWeatherReccomendation").html("<p>Temperatures are looking good for an outdoor exercise.</p>");
+					}
+					if (apiInfo.main.temp < 65) {
+						$("#currentWeatherReccomendation").html("<p>It's looking pretty cold out, Plan to dress warm and exercise indoors if possible.</p>");
+					}
 
-							if (uv < 3) {
-								$("#current-uv").html("<p> UV Index: <span class='text-success'> " + uv + "</span></p>");
-							}
-							if (uv >= 3 && uv <= 6) {
-								$("#current-uv").html("<p> UV Index: <span class='text-warning'>" + uv + "</span></p>");
-							}
-							if (uv > 6) {
-								$("#current-uv").html("<p> UV Index: <span class='text-danger'>" + uv + "</span></p>");
-							}
-						});
-					});
-					// format the github api url
 					var apiForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + user.city + "&units=imperial&appid=" + APIKEY;
 
 					// make a get request to url
@@ -257,7 +234,6 @@ const addInfo = (ev) => {
 								forecastInfo = data;
 
 								//day 1
-								//captures icon code
 
 								var icon = forecastInfo.list[4].weather[0].icon;
 								var date1 = moment().add(1, "days").format("MM-DD-YYYY");
@@ -267,7 +243,17 @@ const addInfo = (ev) => {
 								$("#temp-1").html("<p>Temp: " + forecastInfo.list[4].main.temp + " °F</p>");
 								$("#wind-1").html("<p>Wind: " + forecastInfo.list[4].wind.speed + " MPH</p>");
 								$("#humid-1").html("<p>Humidity: " + forecastInfo.list[4].main.humidity + "%</p>");
-								
+								if (forecastInfo.list[4].main.temp >= 80) {
+									$("#weatherReccomendation1").html(
+										"<p>It's looking pretty hot out, make sure to stay hydrated and exercise indoors if possible.</p>"
+									);
+								}
+								if (forecastInfo.list[4].main.temp < 80 && forecastInfo.list[4].main.temp >= 65) {
+									$("#weatherReccomendation1").html("<p>Temperatures are looking good for an outdoor exercise.</p>");
+								}
+								if (forecastInfo.list[4].main.temp < 65) {
+									$("#weatherReccomendation1").html("<p>It's looking pretty cold out, Plan to dress warm and exercise indoors if possible.</p>");
+								}
 
 								//day 2
 								var date2 = moment().add(2, "days").format("MM-DD-YYYY");
@@ -279,52 +265,24 @@ const addInfo = (ev) => {
 								$("#temp-2").html("<p>Temp: " + forecastInfo.list[12].main.temp + " °F</p>");
 								$("#wind-2").html("<p>Wind: " + forecastInfo.list[12].wind.speed + " MPH</p>");
 								$("#humid-2").html("<p>Humidity: " + forecastInfo.list[12].main.humidity + "%</p>");
-
-								// //day 3
-								// var date3 = moment().add(3, "days").format("MM-DD-YYYY");
-								// //captures icon code
-								// var icon = forecastInfo.list[20].weather[0].icon;
-								// $("#date3").html("<h3>" + date3 + "</h3>");
-								// $("#icon-3").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-								// //displayRepos(data, user);
-								// $("#temp-3").html("<p>Temp: " + forecastInfo.list[20].main.temp + " °F</p>");
-								// $("#wind-3").html("<p>Wind: " + forecastInfo.list[20].wind.speed + " MPH</p>");
-								// $("#humid-3").html("<p>Humidity: " + forecastInfo.list[20].main.humidity + "%</p>");
-
-								// //day 4
-								// var date4 = moment().add(4, "days").format("MM-DD-YYYY");
-								// //captures icon code
-								// var icon = forecastInfo.list[28].weather[0].icon;
-								// $("#date4").html("<h3>" + date4 + "</h3>");
-								// $("#icon-4").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-								// //displayRepos(data, user);
-								// $("#temp-4").html("<p>Temp: " + forecastInfo.list[28].main.temp + " °F</p>");
-								// $("#wind-4").html("<p>Wind: " + forecastInfo.list[28].wind.speed + " MPH</p>");
-								// $("#humid-4").html("<p>Humidity: " + forecastInfo.list[28].main.humidity + "%</p>");
-
-								// //day 5
-								// var date5 = moment().add(5, "days").format("MM-DD-YYYY");
-								// //captures icon code
-								// var icon = forecastInfo.list[36].weather[0].icon;
-								// $("#date5").html("<h3>" + date5 + "</h3>");
-								// $("#icon-5").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-								// //displayRepos(data, user);
-								// $("#temp-5").html("<p>Temp: " + forecastInfo.list[28].main.temp + " °F</p>");
-								// $("#wind-5").html("<p>Wind: " + forecastInfo.list[28].wind.speed + " MPH</p>");
-								// $("#humid-5").html("<p>Humidity: " + forecastInfo.list[28].main.humidity + "%</p>");
-								// $("#fiveday").html("<h4 class='five-day-forecast'>5-Day Forecast:</h4>");
+								if (forecastInfo.list[12].main.temp >= 80) {
+									$("#weatherReccomendation2").html(
+										"<p>It's looking pretty hot out, make sure to stay hydrated and exercise indoors if possible.</p>"
+									);
+								}
+								if (forecastInfo.list[12].main.temp < 80 && forecastInfo.list[12].main.temp >= 65) {
+									$("#weatherReccomendation2").html("<p>Temperatures are looking good for an outdoor exercise.</p>");
+								}
+								if (forecastInfo.list[12].main.temp < 65) {
+									$("#weatherReccomendation2").html("<p>It's looking pretty cold out, Plan to dress warm and exercise indoors if possible.</p>");
+								}
 
 								$("#hiddencard1").removeClass();
-								$("#hiddencard1").addClass("col-2 card");
+								$("#hiddencard1").addClass("col s4 card center block cardcss");
 								$("#hiddencard2").removeClass();
-								$("#hiddencard2").addClass("col-2 card");
-								// $("#hiddencard3").removeClass();
-								// $("#hiddencard3").addClass("col-2 card");
-								// $("#hiddencard4").removeClass();
-								// $("#hiddencard4").addClass("col-2 card");
-								// $("#hiddencard5").removeClass();
-								// $("#hiddencard5").addClass("col-2 card");
-								$("#todaysWeather").addClass("card");
+								$("#hiddencard2").addClass("col s4 card center block cardcss");
+
+								$("#todaysWeather").addClass("col s4 card center block cardcss");
 							});
 						}
 					});
@@ -337,7 +295,7 @@ const addInfo = (ev) => {
 		//captures longitude and lattitude
 
 		.catch(function (error) {
-			alert("Unable to connect to GitHub");
+			alert("Unable to find location");
 		});
 
 	// formSubmitHandler();//weather generator
@@ -383,145 +341,3 @@ var formSubmitHandler = function () {
 		alert("Please enter a GitHub username");
 	}
 };
-
-// var currentWeather = function (user) {
-// 	// format the github api url
-// 	var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + user + "&units=imperial&appid=" + APIKEY;
-
-// 	// make a get request to url
-// 	var apiInfo = fetch(apiUrl)
-// 		.then(function (response) {
-// 			// request was successful
-// 			if (response.ok) {
-// 				response.json().then(function (data) {
-// 					apiInfo = data;
-
-// 					//captures icon code
-// 					var icon = apiInfo.weather[0].icon;
-// 					$("#cityofinterest").html("<h3>" + user + "  " + currentDateObj + "</h3>");
-// 					$("#current-icon").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-// 					//displayRepos(data, user);
-
-// 					//captures longitude and latitude
-// 					var longitude = apiInfo.coord.lon;
-// 					var latitude = apiInfo.coord.lat;
-
-// 					var uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKEY;
-
-// 					$("#current-temp").html("<p>Temp: " + apiInfo.main.temp + " °F</p>");
-// 					$("#current-wind").html("<p>Wind: " + apiInfo.wind.speed + " MPH</p>");
-// 					$("#current-humid").html("<p>Humidity: " + apiInfo.main.humidity + "%</p>");
-
-// 					//fetch request for UV info
-// 					var uvData = fetch(uvURL).then(function (response) {
-// 						response.json().then(function (Uvdata) {
-// 							uvData = Uvdata;
-// 							var uv = uvData.current.uvi;
-
-// 							if (uv < 3) {
-// 								$("#current-uv").html("<p> UV Index: <span class='text-success'> " + uv + "</span></p>");
-// 							}
-// 							if (uv >= 3 && uv <= 6) {
-// 								$("#current-uv").html("<p> UV Index: <span class='text-warning'>" + uv + "</span></p>");
-// 							}
-// 							if (uv > 6) {
-// 								$("#current-uv").html("<p> UV Index: <span class='text-danger'>" + uv + "</span></p>");
-// 							}
-// 						});
-// 					});
-// 					// format the github api url
-// 					var apiForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + user + "&units=imperial&appid=" + APIKEY;
-
-// 					// make a get request to url
-// 					var forecastInfo = fetch(apiForecastUrl).then(function (response) {
-// 						// request was successful
-// 						if (response.ok) {
-// 							response.json().then(function (data) {
-// 								forecastInfo = data;
-
-// 								//day 1
-// 								//captures icon code
-
-// 								var icon = forecastInfo.list[4].weather[0].icon;
-// 								var date1 = moment().add(1, "days").format("MM-DD-YYYY");
-// 								$("#date1").html("<h3>" + date1 + "</h3>");
-// 								$("#icon-1").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-// 								//displayRepos(data, user);
-// 								$("#temp-1").html("<p>Temp: " + forecastInfo.list[4].main.temp + " °F</p>");
-// 								$("#wind-1").html("<p>Wind: " + forecastInfo.list[4].wind.speed + " MPH</p>");
-// 								$("#humid-1").html("<p>Humidity: " + forecastInfo.list[4].main.humidity + "%</p>");
-
-// 								//day 2
-// 								var date2 = moment().add(2, "days").format("MM-DD-YYYY");
-// 								//captures icon code
-// 								var icon = forecastInfo.list[12].weather[0].icon;
-// 								$("#date2").html("<h3>" + date2 + "</h3>");
-// 								$("#icon-2").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-// 								//displayRepos(data, user);
-// 								$("#temp-2").html("<p>Temp: " + forecastInfo.list[12].main.temp + " °F</p>");
-// 								$("#wind-2").html("<p>Wind: " + forecastInfo.list[12].wind.speed + " MPH</p>");
-// 								$("#humid-2").html("<p>Humidity: " + forecastInfo.list[12].main.humidity + "%</p>");
-
-// 								//day 3
-// 								var date3 = moment().add(3, "days").format("MM-DD-YYYY");
-// 								//captures icon code
-// 								var icon = forecastInfo.list[20].weather[0].icon;
-// 								$("#date3").html("<h3>" + date3 + "</h3>");
-// 								$("#icon-3").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-// 								//displayRepos(data, user);
-// 								$("#temp-3").html("<p>Temp: " + forecastInfo.list[20].main.temp + " °F</p>");
-// 								$("#wind-3").html("<p>Wind: " + forecastInfo.list[20].wind.speed + " MPH</p>");
-// 								$("#humid-3").html("<p>Humidity: " + forecastInfo.list[20].main.humidity + "%</p>");
-
-// 								//day 4
-// 								var date4 = moment().add(4, "days").format("MM-DD-YYYY");
-// 								//captures icon code
-// 								var icon = forecastInfo.list[28].weather[0].icon;
-// 								$("#date4").html("<h3>" + date4 + "</h3>");
-// 								$("#icon-4").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-// 								//displayRepos(data, user);
-// 								$("#temp-4").html("<p>Temp: " + forecastInfo.list[28].main.temp + " °F</p>");
-// 								$("#wind-4").html("<p>Wind: " + forecastInfo.list[28].wind.speed + " MPH</p>");
-// 								$("#humid-4").html("<p>Humidity: " + forecastInfo.list[28].main.humidity + "%</p>");
-
-// 								//day 5
-// 								var date5 = moment().add(5, "days").format("MM-DD-YYYY");
-// 								//captures icon code
-// 								var icon = forecastInfo.list[36].weather[0].icon;
-// 								$("#date5").html("<h3>" + date5 + "</h3>");
-// 								$("#icon-5").attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-// 								//displayRepos(data, user);
-// 								$("#temp-5").html("<p>Temp: " + forecastInfo.list[28].main.temp + " °F</p>");
-// 								$("#wind-5").html("<p>Wind: " + forecastInfo.list[28].wind.speed + " MPH</p>");
-// 								$("#humid-5").html("<p>Humidity: " + forecastInfo.list[28].main.humidity + "%</p>");
-// 								$("#fiveday").html("<h4 class='five-day-forecast'>5-Day Forecast:</h4>");
-
-// 								$("#hiddencard1").removeClass();
-// 								$("#hiddencard1").addClass("col-2 card");
-// 								$("#hiddencard2").removeClass();
-// 								$("#hiddencard2").addClass("col-2 card");
-// 								$("#hiddencard3").removeClass();
-// 								$("#hiddencard3").addClass("col-2 card");
-// 								$("#hiddencard4").removeClass();
-// 								$("#hiddencard4").addClass("col-2 card");
-// 								$("#hiddencard5").removeClass();
-// 								$("#hiddencard5").addClass("col-2 card");
-// 								$("#todaysWeather").addClass("card");
-// 							});
-// 						}
-// 					});
-// 				});
-// 			} else {
-// 				alert("Error: " + response.statusText);
-// 			}
-// 		})
-
-// 		//captures longitude and lattitude
-
-// 		.catch(function (error) {
-// 			alert("Unable to connect to GitHub");
-// 		});
-// };
-//loadTasks();
-// userFormEl.addEventListener("submit", formSubmitHandler);
-//("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=");
